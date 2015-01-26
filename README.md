@@ -30,6 +30,8 @@ GitHub returns JSON results. JavaScript has a method [JSON.parse()](https://deve
 GitHub allows a maximum of 60 requests per hour per IP address for anonymous users. This means you need to be judicious with your testing and be careful not to generate endless loops of querying their server.
 
 The API is similar to open weather map. Sending a GET request to https://api.github.com with the appended path will return results. For example a GET request to https://api.github.com/gists returns a page of Gists. Under the overview of the [GitHub API](https://developer.github.com/v3/) there in information on pagination which will be required in order to return more than 1 page of results.
+
+Google Chrome will not allow CORS which are required for this assignment if run from a local file. This means that to test the AJAX functionality you will need to upload the page and JavaScript to the OSU Engineering Web server (recommended) or run a local web server and visit that page (more difficult to set up).
   
 Evaluation
 ----------
