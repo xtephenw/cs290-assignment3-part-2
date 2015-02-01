@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Assignment, AJAX</title>
+  <script type="text/javascript" src='github.js'></script>
+  <!-- Note: omit type="text/css" per google-styleguide -->
+  //<link rel="stylesheet" href="ajax.css">
+</head>
+<body>
+  <div>
+    <h1>Search Parameters</h1>
+    <div id="output"></div>
+    <div>
+      <label>Please select Page to Display:</label>
+        <select name=page_number>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div>
+        <label>Language:</label>
+        <div>
+          <fieldset>
+            <p>Programming Language Filter:</p>
+            <input type="radio" name="language_input" value="All"><label>ALL</label><br>
+            <input type="radio" name="language_input" value="Python"><label>Python</label><br>
+            <input type="radio" name="language_input" value="JSON"><label>JSON</label><br>
+            <input type="radio" name="language_input" value="JavaScript"><label>JavaScript</label><br>
+            <input type="radio" name="language_input" value="SQL"><label>SQL</label><br> 
+          </fieldset>
+        </div>
+    </div>
+    <input type='button' name='save' onclick='saveLocalSearch();' value = 'Save Search'>
+    <input type='button' name='getGist' onclick='loagGitPages();' value = 'Pull GIST data'>
+  </div>
+  <br>
+  <section>
+    <h1>Favorites</h1>
+    <p>
+      <div id="favoritesList">
+      </div>
+    </p>
+  </section>
+  <br>
+  <section>
+    <h1>Search Results</h1>
+    <p>
+       <div id="searchResults">
+      </div>
+    </p>
+  </section>
+ </body>
+</html>
