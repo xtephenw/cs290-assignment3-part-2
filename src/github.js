@@ -9,15 +9,32 @@ if (!req)
 }
 var citySelect = document.getElementsByName('');
 var url = 'https://api.github.com/gists';
-//https://api.github.com/gists
-//var params =  {q:"jackson,ms",mode:'json',units:'imperial', cnt: '7'};
-//url += '?' + urlStringify(params);
   req.onreadystatechange = function()
   {
   
 	if (req.readyState === 4) {
 		if (req.status === 200) {
 			  alert(req.responseText);
+			  var myjson = JSON.parse(req.responseText);
+			  var i = 0;
+			  for (var obj1 in myjson) {
+				  p = document.createElement("P");
+				  ptext = document.createTextNode(myjson[i].url);
+				  p.appendChild(ptext);
+				  document.body.appendChild(p);
+				  
+				  var br = document.createElement("br");
+				  p.appendChild(br);
+				  
+				  ptext = document.createTextNode(myjson[i].created_at);
+				  p.appendChild(ptext);
+				  document.body.appendChild(p);
+				  
+				  console.log(myjson[i].files);
+				 	
+
+			  }			  
+		
 		};
 	}
   }
