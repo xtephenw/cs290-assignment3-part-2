@@ -9,10 +9,10 @@
 <body>
   <div>
     <h1>Search Parameters</h1>
-    <div id="output"></div>
+    <div id="numpages"></div>
     <div>
-      <label>Please select Page to Display:</label>
-        <select name=page_number>
+      <label>Please select Number of Pages to Display:</label>
+        <select id = "selector" name=numberOfPages>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -34,7 +34,7 @@
         </div>
     </div>
     <input type='button' name='save' onclick='saveLocalSearch();' value = 'Save Search'>
-    <input type='button' name='getGist' onclick='loagGitPages();' value = 'Pull GIST data'>
+    <input type='button' name='getGist' onclick='loagGitPages();' value = 'Search'>
   </div>
   <br>
   <section>

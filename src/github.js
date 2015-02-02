@@ -27,18 +27,28 @@ var numpages = num_element.value;
 				  var br = document.createElement("br");
 				  p.appendChild(br);
 
-				  ptext = document.createTextNode(myjson[i].url);
-				  p.appendChild(ptext);
+				  //ptext = document.createTextNode(myjson[i].url);
+				  //p.appendChild(ptext);
 
-				  document.body.appendChild(p);
+				  var x = document.createElement('a');; 
+				  var linkText = document.createTextNode("Link to GitHub");
+				  x.appendChild(linkText); 	
+				  x.href = myjson[i].url;
+
+				  p.appendChild(x);
+				  
+				  
+				  
+
+
+				  
 				  var br = document.createElement("br");
 				  p.appendChild(br);
 				  
 				  ptext = document.createTextNode(myjson[i].created_at);
 				  p.appendChild(ptext);
 
-
-
+				  
 				  document.body.appendChild(p);
 				  console.log(myjson[i].files);
 				  i ++;	
