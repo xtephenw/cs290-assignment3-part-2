@@ -15,15 +15,16 @@ var numpages = num_element.value;
   
 	if (req.readyState === 4) {
 		if (req.status === 200) {
-			  alert(req.responseText);
+			  //alert(req.responseText);
 			  var myjson = JSON.parse(req.responseText);
 			  var i = 0;
 			  for (var obj1 in myjson) {
 				  p = document.createElement("P");
-
+				  p.setAttribute("id", "el"+i);
     			  ptext = document.createTextNode(myjson[i].description);
+				  
 				  p.appendChild(ptext);
-
+	
 				  var br = document.createElement("br");
 				  p.appendChild(br);
 
@@ -45,8 +46,11 @@ var numpages = num_element.value;
 
 				  var button = document.createElement('button');
 			      button.innerHTML = 'save to favorites';
-					button.onclick = function(){
-						alert('here be dragons');return false;
+				  button.setAttribute("id", "el"+i);
+				  button.onclick = function(){
+						//localStorage.setItem(this.getAttribute("id"), JSON.stringify(myjson[i])); myjson[i].description
+						localStorage.setItem(this.getAttribute("id"), JSON.stringify(myjson[i])); 
+						
 					};
 				  p.appendChild(button);
 				  
