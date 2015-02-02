@@ -7,8 +7,9 @@ if (!req)
 {
 	throw 'unable to create HttpRequest';
 }
-var citySelect = document.getElementsByName('');
 var url = 'https://api.github.com/gists';
+var num_element = document.getElementById('selector');
+var numpages = num_element.value;
   req.onreadystatechange = function()
   {
   
@@ -19,20 +20,29 @@ var url = 'https://api.github.com/gists';
 			  var i = 0;
 			  for (var obj1 in myjson) {
 				  p = document.createElement("P");
+
+    			  ptext = document.createTextNode(myjson[i].description);
+				  p.appendChild(ptext);
+
+				  var br = document.createElement("br");
+				  p.appendChild(br);
+
 				  ptext = document.createTextNode(myjson[i].url);
 				  p.appendChild(ptext);
+
 				  document.body.appendChild(p);
-				  
 				  var br = document.createElement("br");
 				  p.appendChild(br);
 				  
 				  ptext = document.createTextNode(myjson[i].created_at);
 				  p.appendChild(ptext);
-				  document.body.appendChild(p);
-				  
-				  console.log(myjson[i].files);
-				 	
 
+
+
+				  document.body.appendChild(p);
+				  console.log(myjson[i].files);
+				  i ++;	
+		//			<button>delete</button>
 			  }			  
 		
 		};
