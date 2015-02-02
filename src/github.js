@@ -27,9 +27,6 @@ var numpages = num_element.value;
 				  var br = document.createElement("br");
 				  p.appendChild(br);
 
-				  //ptext = document.createTextNode(myjson[i].url);
-				  //p.appendChild(ptext);
-
 				  var x = document.createElement('a');; 
 				  var linkText = document.createTextNode("Link to GitHub");
 				  x.appendChild(linkText); 	
@@ -37,22 +34,25 @@ var numpages = num_element.value;
 
 				  p.appendChild(x);
 				  
-				  
-				  
-
-
-				  
 				  var br = document.createElement("br");
 				  p.appendChild(br);
 				  
 				  ptext = document.createTextNode(myjson[i].created_at);
 				  p.appendChild(ptext);
 
+				  var br = document.createElement("br");
+				  p.appendChild(br);
+
+				  var button = document.createElement('button');
+			      button.innerHTML = 'save to favorites';
+					button.onclick = function(){
+						alert('here be dragons');return false;
+					};
+				  p.appendChild(button);
 				  
 				  document.body.appendChild(p);
 				  console.log(myjson[i].files);
 				  i ++;	
-		//			<button>delete</button>
 			  }			  
 		
 		};
